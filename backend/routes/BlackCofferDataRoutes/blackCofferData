@@ -6,6 +6,8 @@ const BLACKCOFFERDATA = require("../../model/blackCofferDataSet");
 router.get("/fetchdata", async (req, res) => {
   try {
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     console.log("initiated getting data from mongoDB")
     const blackCofferData = await BLACKCOFFERDATA.find({
@@ -34,3 +36,4 @@ module.exports = router;
 
 // HERE I ENCOUNTERED MAJORE ERROR BECAUSE IN MY MONGO DB DATABASE I HAVE MULTIPLE ENTERIES OF PRODUCTS FROM DIFFERENT USERS
 // AND ALL OF THEM HAVE SAME _ID SO I NEED TO REMOVE IT FROM THE API
+       
