@@ -5,6 +5,8 @@ const BLACKCOFFERDATA = require("../../model/blackCofferDataSet");
 // FOR FETCHING CART ITEMS BASED ON THE USER AUTH TOKEN
 router.get("/fetchdata", async (req, res) => {
   try {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
     console.log("initiated getting data from mongoDB")
     const blackCofferData = await BLACKCOFFERDATA.find({
        
