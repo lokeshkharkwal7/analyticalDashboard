@@ -1,0 +1,34 @@
+const express = require("express");
+const router = express.Router();
+router.use(express.json()); // for handeling json files in body
+const BLACKCOFFERDATA = require("../../model/blackCofferDataSet");
+// FOR FETCHING CART ITEMS BASED ON THE USER AUTH TOKEN
+router.get("/fetchdata", async (req, res) => {
+  try {
+    console.log("initiated getting data from mongoDB")
+    const blackCofferData = await BLACKCOFFERDATA.find({
+       
+    }) 
+    console.log("Data found and data is :  ", blackCofferData);
+
+    if (blackCofferData.length === 0 ) {
+      res.json({
+        status: false,
+        message: "Unable to fetch cart details from the server",
+      });
+    }
+    res.json({
+      status: true,
+      data: blackCofferData,
+    });
+  } catch (error) {
+    console.log("Error Occured while fetching cart products : ", error);
+  }
+});
+
+module.exports = router;
+
+// ERRORS :
+
+// HERE I ENCOUNTERED MAJORE ERROR BECAUSE IN MY MONGO DB DATABASE I HAVE MULTIPLE ENTERIES OF PRODUCTS FROM DIFFERENT USERS
+// AND ALL OF THEM HAVE SAME _ID SO I NEED TO REMOVE IT FROM THE API
