@@ -18,6 +18,8 @@ export const fetchBlackCofferData = async (dispatch , getDataFromAPI) => {
 
     const response = await fetch(url, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
+      mode: "no-cors", // Set mode to 'no-cors'
+
       headers: {
         "Content-Type": "application/json",
 
