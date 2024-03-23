@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.use( cors({
   
-  origin: ["*"],
+  origin: ["'https://analytical-dashboard-six.vercel.app"],
   // origin: ["https://wizstore.vercel.app"],
  
     methods: ["GET", "POST", "PUT", "DELETE"],
