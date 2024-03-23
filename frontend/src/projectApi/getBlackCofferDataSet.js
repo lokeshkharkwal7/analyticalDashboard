@@ -1,5 +1,5 @@
 import { fetchDataComplete } from "../components/redux/slicers/fetchDataSlicer";
- const host = "https://black-coffer-data-visualization-dashboard-backend.vercel.app";
+ const host = "https://backend-data-analytical-dashboard.vercel.app";
 //  const host = "http://localhost:4000";
 
 const filePath = "../data/blackCofferDataFromAPI.json"
