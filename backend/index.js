@@ -3,16 +3,16 @@ let cors = require("cors");
 
 const app = express();
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
-app.use( cors({
+// app.use( cors({
   
-  origin: ["https://analytical-dashboard-kappa.vercel.app"],
-  // origin: ["https://wizstore.vercel.app"],
+//   origin: ["https://analytical-dashboard-kappa.vercel.app"],
+//   // origin: ["https://wizstore.vercel.app"],
  
-    methods: ["GET", "POST", "PUT", "DELETE"],
-  // credentials: true
-}));
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//   // credentials: true
+// }));
 
 // importing config files
 const mongoConnect = require("./connect");
